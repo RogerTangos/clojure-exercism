@@ -1,23 +1,16 @@
 (ns etl)
 
-(def foo {1 [:foo :bar], 2 [:fizz :buzz]})
-
-(defn transform [source]); (into [] (clojure.set/map-invert foo))
-  ;
-  ;
-  ; (let [new-keys (flatten (vals source))])
-  ;
-  ;
-  ;
-  ; (->> (clojure.set/map-invert source)
-  ;      ()))
-
-; use all items in values of
-
-  ; (clojure.set/map-invert source))
-  ; (println (keys source))
-  ; (println (set (vals source))))
-
-
-; create empty map with each key
-; go over the map, and assoc
+(defn transform [source]
+  ; create a function, transformer, that produces
+  ; a nested vec with v_1 k... v_n k items
+  ; then flatten the result and turn them into a hash map.
+  (let [transformer #(interleave
+                      (map
+                       clojure.string/lower-case
+                       (second %))
+                      (repeat
+                       (count (second %))
+                       (first %)))]
+    (->> (map transformer source)
+         (flatten)
+         (apply hash-map))))
