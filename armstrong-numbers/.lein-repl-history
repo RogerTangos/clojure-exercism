@@ -1,0 +1,128 @@
+(count 123)
+(partition 1 123)
+(partition 1 "123")
+(partition 1 (range 123))
+(partitions 1 "123")
+(partition 1 "123")
+(num (partition 1 "123"))
+(number (partition 1 "123"))
+(int (partition 1 "123"))
+(interger (partition 1 "123"))
+(Integer/parseInt "1")
+(apply Integer/parseInt (partition 1 "123"))
+(map Integer/parseInt (partition 1 "123"))
+(partition 1 "123")
+(apply Integer/parseInt (partition 1 "123"))
+(int "1")
+strnum (str num)
+(def strnum (str num))
+(def len (count strnum))
+(def partitions (partition 1 strnum))
+partitions
+strnum
+num
+(def strnum (str 123))
+(def partitions (partition 1 strnum))
+(def strnum (str 123))
+partitions
+strnum
+(len (count strnum))
+(def len (count strnum))
+len
+(map #(Integer/parseInt) partitions)
+(map #(Integer/parseInt %) partitions)
+partitions
+(map read-string partitions)
+(read-string "123")
+(split "123" "")
+(split "123" #"")
+(require '[clojure.string :as str]
+)
+(str/split "123" #"")
+(def partitions (str/split strnum #""))
+partitions
+(apply Integer/parseInt partitions)
+(apply read-string partitions)
+(map read-string partitions)
+(map Integer/parseInt partitions)
+(map #Integer/parseInt partitions)
+(seq (str 123))
+(def digits (seq (str num))
+(def num 123)
+(def digits (seq (str num))
+)
+digits
+(count digits)
+len
+(use 'clojure.math.numeric-tower)
+(defn exp [x n]
+  (reduce * (repeat n x)))
+(defn armstrong? [num]
+  (let [digits (seq (str num))
+        len (count digits)]
+    (exp num 3)))
+(exp 2 2)
+(+ 1 2 3)
+(apply + (1 2 3))
+(apply #+ (1 2 3))
+(reduce + (1 2 3))
+(apply + '(1 2 3))
+(defn exp [x n]
+  (reduce * (repeat n x)))
+(defn armstrong? [num]
+  (let [digits (seq (str num))
+        num-len (count digits)
+        sums (map #(exp % num-len) digits)]
+    (apply + sums)))
+(armstrong? 2)
+(def a-num 2)
+(apply read-string (seq (str a-num)))
+(str a-num)
+(seq (str a-num))
+apply read-string (seq (str a-num))
+apply #read-string (seq (str a-num))
+(map read-string (seq (str a-num)))
+(seq (str a-num))
+(def myseq (seq (str a-num)))
+(seq (str a-num))
+(def a-num 23)
+(seq (str a-num))
+(first (seq (str a-num)))
+(+ 1 (first (seq (str a-num))))
+(read-string (first (seq (str a-num))))
+(apply parse-int (seq (str a-num))
+)
+(defn parse-int [s]
+   (Integer. (re-find  #"\d+" s )))
+(apply parse-int (seq (str a-num)))
+(map parse-int (seq (str a-num)))
+(map #parse-int (seq (str a-num)))
+(apply string (seq (str a-num)))
+(apply str (seq (str a-num)))
+(map str (seq (str a-num)))
+(map #(parse-int (str %)) (seq (str a-num))
+)
+(defn exp [x n]
+  (reduce * (repeat n x)))
+(defn parse-int [s]
+  (Integer. (re-find  #"\d+" s)))
+(defn armstrong? [a-num]
+  (let [digits (map #(parse-int (str %)) (seq (str a-num)))
+        num-len (count digits)
+        sums (map #(exp % num-len) digits)]
+    (apply + sums)))
+(armstrong? 3)
+(armstrong? 5)
+(armstrong? 10)
+(armstrong? 11)
+(armstrong? 12)
+(defn exp [x n]
+  (reduce * (repeat n x)))
+(defn parse-int [s]
+  (Integer. (re-find  #"\d+" s)))
+(defn armstrong? [a-num]
+  (let [digits (map #(parse-int (str %)) (seq (str a-num)))
+        num-len (count digits)
+        sums (map #(exp % num-len) digits)
+        total (apply + sums)]
+quit()
