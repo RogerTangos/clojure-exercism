@@ -16,6 +16,3 @@
 (defn scalene? [& sides]
   (and
    (is-valid? sides) (= 3 (count (distinct sides)))))
-
-(defn mytest [& foo]
-  foo)
